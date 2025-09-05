@@ -18,8 +18,8 @@ El primero es para compilar y el segundo es para ejecutar las pruebas unitarias.
 
 En esta sección deben eliminar esta línea de texto, borrar la leyenda "Integrante n" y escribir su nombre empezando por apellidos y su número de cuenta.
 
-    +Integrante 1
-        -No. de Cuenta: 
+    +Omana Ramos Darik Neydan
+        -No. de Cuenta: 322211175
     +Integrante 2
         -No. de Cuenta: 
     +Integrante 3
