@@ -39,19 +39,29 @@ relacionCongruentesModuloN = undefined
 data Natural = Cero | Suc Natural deriving (Show,Eq) --Esto es para que se muestre y que se puedan comparar
 
 esPar :: Natural -> Bool
-esPar = undefined
+esPar Cero = True
+esPar (Suc Cero) = False
+esPar (Suc (Suc n)) = esPar n
 
 iguales :: Natural -> Natural -> Bool
-iguales = undefined
+iguales Cero Cero = True
+iguales _ Cero = False
+iguales Cero _ = False
+iguales (Suc n) (Suc m) = iguales n m
 
 maximo :: Natural -> Natural -> Natural 
-maximo = undefined
+maximo Cero m = m
+maximo n Cero = n
+maximo (Suc n) (Suc m) = (Suc (maximo n m))
 
 potencia :: Natural -> Natural -> Natural
-potencia = undefined
+potencia _ Cero = (Suc Cero)
+potencia n (Suc m) = multiplicacion (potencia n m) n
 
 multiplicacion :: Natural -> Natural -> Natural
-multiplicacion = undefined
+multiplicacion _ Cero = Cero
+multiplicacion n (Suc m) = suma (multiplicacion n m) n
 
 suma :: Natural -> Natural -> Natural
-suma = undefined
+suma n Cero = n
+suma n (Suc m) = (Suc (suma n m))
