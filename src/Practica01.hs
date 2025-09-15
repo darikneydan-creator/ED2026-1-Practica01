@@ -2,23 +2,24 @@ module Practica01 where
 
 --FUNCIONES
 valorAbs :: Int -> Int
-valorAbs = undefined
+valorAbs 0 = 0
+valorAbs x = if x < 0 then x*(-1) else x
 
 esDivisor :: Int -> Int -> Bool
-esDivisor = undefined 
+esDivisor x y = if y `mod` x == 0 then  True else False 
 
 cuadratica :: Float -> Float -> Float -> Float -> Float
-cuadratica = undefined
+cuadratica a b c v =  a*(v*v) + b*v + c
 
 
 sumaFracciones :: (Int, Int) -> (Int, Int) -> (Int, Int)
-sumaFracciones = undefined
+sumaFracciones (w,x) (y,z) = if x == z then (w+y,x) else (x*y + w*z, x*z)
 
 comparador :: Float -> Float -> Int
-comparador = undefined
+comparador n m = if  n > m then 1 else if m>n then -1 else 0
 
 puntoMedio :: (Float, Float) -> (Float, Float) -> (Float, Float)
-puntoMedio = undefined
+puntoMedio (x,z) (y,w)= ((x + y) / 2, (z+w) / 2)
 
 
 --RELACIONES
