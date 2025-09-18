@@ -20,8 +20,8 @@ En esta sección deben eliminar esta línea de texto, borrar la leyenda "Integra
 
     +Omana Ramos Darik Neydan
         -No. de Cuenta: 322211175
-    +Integrante 2
-        -No. de Cuenta: 
+    +Hernández Bautista Iago
+        -No. de Cuenta: 323256223
     +Integrante 3
         -No. de Cuenta: 
 
