@@ -23,16 +23,36 @@ puntoMedio (x,z) (y,w)= ((x + y) / 2, (z+w) / 2)
 
 
 --RELACIONES
+--Funciones de apoyo extra
+esMultiplo :: Int ->Int -> Bool
+esMultiplo n m = n `mod` m == 0
+
+esMenor ::Int->Int->Bool
+esMenor a b = a<b
+
+esParREL :: Int->Bool
+esParREL x = (x `mod` 2)==0
+
+esImpar :: Int->Bool
+esImpar x = (x `mod` 2)/=0
+
+esDiferente:: Int->Int->Bool
+esDiferente x y = x/=y
+
+mismaParidad :: Int->Int->Bool
+mismaParidad x y = ((esParREL x==True) && (esParREL y==True)) || ((esImpar x==True) && (esImpar y==True))
+
+--Funciones principales
 type Rel a b = [(a, b)]
 
 relacionDivisor :: Rel Int Int
-relacionDivisor = undefined
+relacionDivisor = [(x,y) | x <- [1..30], y <- [1..30], mismaParidad x y, esDivisor x y]
 
-relacionSumaEspecial :: Rel Int Int
-relacionSumaEspecial = undefined
+relacionSumaEspecial :: Rel  Int Int
+relacionSumaEspecial = [(x,y) | x<-[1..30], y<-[1..30], esMultiplo (x+y) 5, esMenor x y]
 
 relacionCongruentesModuloN :: Int -> Rel Int Int
-relacionCongruentesModuloN = undefined
+relacionCongruentesModuloN n = [(x,y) | x<-[1..30], y<-[1..30], ((x `mod` n) == (y `mod` n)), esDiferente x y]
 
 
 --NATURALES
@@ -66,3 +86,4 @@ multiplicacion n (Suc m) = suma (multiplicacion n m) n
 suma :: Natural -> Natural -> Natural
 suma n Cero = n
 suma n (Suc m) = (Suc (suma n m))
+
