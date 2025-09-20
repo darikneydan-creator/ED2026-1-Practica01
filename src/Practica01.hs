@@ -24,21 +24,28 @@ puntoMedio (x,z) (y,w)= ((x + y) / 2, (z+w) / 2)
 
 --RELACIONES
 --Funciones de apoyo extra
+
+--Verificar si un entero es multiplo de otro
 esMultiplo :: Int ->Int -> Bool
 esMultiplo n m = n `mod` m == 0
 
+--Verificar si un entero es menor a otro
 esMenor ::Int->Int->Bool
 esMenor a b = a<b
 
+--Verificar si un entero es par
 esParREL :: Int->Bool
 esParREL x = (x `mod` 2)==0
 
+--Verificar si un entero es impar
 esImpar :: Int->Bool
 esImpar x = (x `mod` 2)/=0
 
+--Verificar si un entero es diferente a otro
 esDiferente:: Int->Int->Bool
 esDiferente x y = x/=y
 
+--Checa que dos enteros tengan la misma paridad
 mismaParidad :: Int->Int->Bool
 mismaParidad x y = ((esParREL x==True) && (esParREL y==True)) || ((esImpar x==True) && (esImpar y==True))
 
